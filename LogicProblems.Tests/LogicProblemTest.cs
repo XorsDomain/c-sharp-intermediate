@@ -6,10 +6,6 @@ namespace LogicProblems.Tests
 {
     public class LogicProblemTest
     {
-        [Fact]
-        public void Test1()
-        {
-
-        }
+        
     }
 }
