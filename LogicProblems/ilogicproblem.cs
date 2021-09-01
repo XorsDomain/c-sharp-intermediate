@@ -17,12 +17,12 @@ namespace LogicProblems
 
     public interface ILogicProblem
     {
-        double average(int[] scores);
+        double Average(int[] scores);
 
-        int lastWordLength(string text);
+        int LastWordLength(string text);
 
-        decimal distinctLadderPaths(int rungs);
+        decimal DistinctLadderPaths(int rungs);
 
-        List<List<String>> groupStrings(String[] strs);
+        List<List<String>> GroupStrings(String[] strs);
     }
 }

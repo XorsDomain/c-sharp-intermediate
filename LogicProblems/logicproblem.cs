@@ -6,22 +6,22 @@ namespace LogicProblems
     public class LogicProblem : ILogicProblem
     {
         //TODO: Implement all requirements as defined in the project description.
-        public double average(int[] scores)
+        public double Average(int[] scores)
         {
             throw new NotImplementedException();
         }
 
-        public decimal distinctLadderPaths(int rungs)
+        public decimal DistinctLadderPaths(int rungs)
         {
             throw new NotImplementedException();
         }
 
-        public List<List<string>> groupStrings(string[] strs)
+        public List<List<string>> GroupStrings(string[] strs)
         {
             throw new NotImplementedException();
         }
 
-        public int lastWordLength(string text)
+        public int LastWordLength(string text)
         {
             throw new NotImplementedException();
         }
