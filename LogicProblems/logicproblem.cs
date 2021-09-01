@@ -5,6 +5,7 @@ namespace LogicProblems
 {
     public class LogicProblem : ILogicProblem
     {
+        //TODO: Implement all requirements as defined in the project description.
         public double average(int[] scores)
         {
             throw new NotImplementedException();
