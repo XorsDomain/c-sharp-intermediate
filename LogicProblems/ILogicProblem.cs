@@ -23,6 +23,6 @@ namespace LogicProblems
 
         decimal DistinctLadderPaths(int rungs);
 
-        List<List<String>> GroupStrings(String[] strs);
+        List<List<string>> GroupStrings(string[] strs);
     }
 }
