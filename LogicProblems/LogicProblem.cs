@@ -31,19 +31,23 @@ namespace LogicProblems
 
         public decimal DistinctLadderPaths(int rungs)
         {
+            decimal firstNumber = 1;
+            decimal secondNumber = 2;
             if (rungs < 0)
             {
                 throw new NotImplementedException("ladders can't have negative rungs");
             }
-            if (rungs <= 3)
+            if (rungs < 3)
             {
                 return rungs;
             }
-            // if (rungs == 2) 
-            // {
-            //     return rungs;
-            // }
-            return DistinctLadderPaths(rungs - 1) + DistinctLadderPaths(rungs - 2);
+            for (int i = 3; i <= rungs; i++)
+            {
+                decimal numberOfPaths = firstNumber + secondNumber;
+                firstNumber = secondNumber;
+                secondNumber = numberOfPaths;
+            }
+            return secondNumber;
         }
 
 

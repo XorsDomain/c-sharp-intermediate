@@ -79,6 +79,24 @@ namespace LogicProblems.Tests
         }
 
         [Fact]
+        public void DistinctLadder_ReturnPaths_LargerNumber()
+        {
+            int number = 50;
+            long expected = 20365011074;
+            var actual = logicProblem.DistinctLadderPaths(number);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void DistinctLadder_ReturnPaths_EvenLargerNumber()
+        {
+            int number = 100;
+            decimal expected = 573147844013817084101m;
+            var actual = logicProblem.DistinctLadderPaths(number);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
         public void CheckLastWord_InString_ReturnsLength()
         {
             string str = "Hello World";
