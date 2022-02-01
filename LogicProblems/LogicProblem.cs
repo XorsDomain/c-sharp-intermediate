@@ -53,7 +53,35 @@ namespace LogicProblems
 
         public List<List<string>> GroupStrings(string[] strs)
         {
-            throw new NotImplementedException();
+            //make a dictionary
+            var myDictionary = new Dictionary<string, List<string>>();
+
+            List<List<string>> myList = new List<List<string>>();
+
+            foreach (string word in strs)
+            {
+                if (String.IsNullOrEmpty(word))
+                {
+                    throw new NotImplementedException("strings must not be empty");
+                }
+                //get first and last letter into key
+                var key = word.ToLower().Substring(0, 1) + word.Substring(word.Length - 1, 1);
+
+
+                //loop through to see if key exists
+                if (myDictionary.TryGetValue(key, out List<string> tempList))
+                {
+                    //does exist, add a row
+                    tempList.Add(word);
+                    myList.Add(tempList);
+                }
+                else
+                {
+                    myDictionary.Add(key, new List<string>() { word });
+                }
+            }
+            myList = myDictionary.Values.ToList();
+            return myList;
         }
 
         public int LastWordLength(string text)

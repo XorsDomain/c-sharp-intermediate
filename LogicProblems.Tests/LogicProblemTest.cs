@@ -1,8 +1,6 @@
 using System;
 using Xunit;
-using System.Linq;
 using System.Collections.Generic;
-using LogicProblems;
 
 namespace LogicProblems.Tests
 {
@@ -47,7 +45,7 @@ namespace LogicProblems.Tests
         {
             int[] numbers = { 4, 8, -27 };
             string expected = "scores must be positive";
-            var errorMsg =  Assert.Throws<NotImplementedException>(() => logicProblem.Average(numbers));
+            var errorMsg = Assert.Throws<NotImplementedException>(() => logicProblem.Average(numbers));
             Assert.Equal(expected, errorMsg.Message);
         }
 
@@ -97,10 +95,71 @@ namespace LogicProblems.Tests
         }
 
         [Fact]
+        public void DistinctLadder_ReturnError_NegativeRungs()
+        {
+            int number = -1;
+            string expected = "ladders can't have negative rungs";
+            var errorMsg = Assert.Throws<NotImplementedException>(() => logicProblem.DistinctLadderPaths(number));
+            Assert.Equal(expected, errorMsg.Message);
+        }
+
+        [Fact]
+        public void GroupString_ReturnList_ListOfWords()
+        {
+            string[] myList = { "arrange", "act", "ace", "assert" };
+            List<List<string>> expected = new List<List<string>>();
+            expected.Add(new List<string> { "arrange", "ace" });
+            expected.Add(new List<string> { "act", "assert" });
+            var actual = logicProblem.GroupStrings(myList);
+            Assert.Equal(expected, actual);
+
+        }
+
+        [Fact]
+        public void GroupString_ReturnList_AnotherList()
+        {
+            string[] myList = { "cider", "chastise", "cipher", "cognize" };
+            List<List<string>> expected = new List<List<string>>();
+            expected.Add(new List<string> { "cider", "cipher" });
+            expected.Add(new List<string> { "chastise", "cognize" });
+            var actual = logicProblem.GroupStrings(myList);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GroupString_ReturnList_OneWord()
+        {
+            string[] myList = { "cart" };
+            List<List<string>> expected = new List<List<string>>();
+            expected.Add(new List<string> { "cart" });
+            var actual = logicProblem.GroupStrings(myList);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GroupString_ReturnError_EmptyString()
+        {
+            string[] myList = { "" };
+            string expected = "strings must not be empty";
+            var errorMsg = Assert.Throws<NotImplementedException>(() => logicProblem.GroupStrings(myList));
+            Assert.Equal(expected, errorMsg.Message);
+        }
+
+
+        [Fact]
         public void CheckLastWord_InString_ReturnsLength()
         {
             string str = "Hello World";
             int expected = 5;
+            var actual = logicProblem.LastWordLength(str);
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void CheckLastWord_AnotherWord_ReturnsLength()
+        {
+            string str = "Good Morning";
+            int expected = 7;
             var actual = logicProblem.LastWordLength(str);
             Assert.Equal(expected, actual);
         }
