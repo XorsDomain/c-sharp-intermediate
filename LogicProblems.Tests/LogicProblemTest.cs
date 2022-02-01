@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 namespace LogicProblems.Tests
 {
+    /// <summary>
+    /// LogicProblems class is the file with the methods that is being referred to here. This allows the unit tests to execute the code it needs to.
+    /// </summary>
     public class LogicProblems
     {
         //TODO: Implement all requirements as specified in the requirements document

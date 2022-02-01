@@ -5,7 +5,7 @@ using System.Linq;
 namespace LogicProblems
 {
     /// <summary>
-    /// This public class is the class of the file ILogicProblem.
+    /// This public class is the class of the file ILogicProblem, which shares the same methods.
     /// </summary>
     public class LogicProblem : ILogicProblem
     {
